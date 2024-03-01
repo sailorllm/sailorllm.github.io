@@ -43,15 +43,15 @@
 <body>
 
 
-<section class="hero">
+<section class="hero teaser">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Sailor: Open Language Models for South-East Asia</h1>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-2 publication-title"><img src="./static/images/sailor_logo.png" width="60px"> Introducing Sailor: <br/>Open Language Models for South-East Asia</h1>
+          <div class="is-size-6 publication-authors" style="margin-bottom: 1rem;">
             <span class="author-block">
-              Developed by <a href="https://sail.sea.com/">Sea AI Lab</a> and <a href="https://istd.sutd.edu.sg/people/faculty/lu-wei/">SUTD</a>
+              By <a href="https://sail.sea.com/">Sea AI Lab</a> and <a href="https://istd.sutd.edu.sg/people/faculty/lu-wei/">Singapore University of Technology and Design</a>
             </span>
           </div>
 
@@ -83,7 +83,7 @@
               </span> -->
               <!-- Model Link. -->
               <span class="link-block">
-                <a href="https://huggingface.co/sail"
+                <a href="https://huggingface.co/collections/sail/sailor-65e19a749f978976f1959825"
                    class="external-link button is-normal is-rounded is-dark">
                    <span class="icon"> <img src="./static/images/huggingface_logo.svg" width="20px"> </span>
                    <span>Huggingface</span>
@@ -91,7 +91,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/sail-sg"
+                <a href="https://github.com/sail-sg/sailor"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -118,8 +118,7 @@
 </section>
 
 
-
-<section class="section">
+<section class="section teaser">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -127,32 +126,19 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Sailor is a suite of Open Language Models tailored for South-East Asia (SEA), focusing on languages such as 🇮🇩Indonesian, 🇹🇭Thai, 🇻🇳Vietnamese, 🇲🇾Malay, and 🇱🇦Lao. Developed with careful data curation, Sailor models are designed to understand and generate text across diverse linguistic landscapes of SEA region. Built from Qwen 1.5, Sailor encompasses models of varying sizes, spanning from 0.5B to 7B versions for different requirements. We further fine-tune the base model with open-source datasets to get instruction-tuned models, namedly Sailor-Chat. Benchmarking results demonstrate Sailor's proficiency in tasks such as question answering, commonsense reasoning, and other tasks in SEA languages.
           </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+          <ul>
+            <li>
+              Continually pretrained on <b>200 Billion to 400 Billion</b> tokens over 7 languages, including Indonesian, Thai, Vietnamese, Malay, Lao, English and Chinese.
+            </li>
+            <li>
+              Various model sizes (<b>0.5B</b>, <b>1.8B</b>, <b>4B</b> and <b>7B</b>) to support different requirements.
+            </li>
+            <!-- <li>
+              Open source and free for research and commercial use.
+            </li> -->
+          </ul>
         </div>
       </div>
     </div>
@@ -161,19 +147,39 @@
   </div>
 </section>
 
-
-<section class="section">
+<section class="section teaser">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
       <!-- Description -->
       <div class="column is-full-width">
-        <h2 class="title is-3">Description</h2>
+        <h2 class="title is-3">Demonstration: How to Cook a Fish</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/en_demo.gif" width="40%">
+          <img src="./static/images/id_demo.gif" width="40%">
+        </div>
+        <div class="content has-text-justified">
+          <img src="./static/images/th_demo.gif" width="40%">
+          <img src="./static/images/vi_demo.gif" width="40%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section teaser">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <!-- Description -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Sailor is built from Open-Source</h2>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            Sailor owes its existence to the open-source community. It is crafted by continually pre-training from language models like the remarkable <a href="https://qwenlm.github.io/blog/qwen1.5/">Qwen 1.5</a> models, which already has a great performance on SEA languages. The pre-training corpus heavily leverages the publicly available corpus, including <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B">SlimPajama</a>, <a href="https://huggingface.co/datasets/Skywork/SkyPile-150B">SkyPile</a>, <a href="https://huggingface.co/datasets/cc100">CC100</a> and <a href="https://huggingface.co/datasets/allenai/MADLAD-400">MADLAD-400</a>.
+          </p>
+          <p>
+            By employing aggressive data deduplication and careful data cleaning on the collected corpus, we have attained a high-quality dataset spanning various languages. Through systematic experiments to determine the weights of different languages, Sailor models undergo training from 200B to 400B tokens, tailored to different model sizes. The approach boosts their performance on SEA languages while maintaining proficiency in English and Chinese without significant compromise. Finally, we continually pre-train the Qwen1.5-0.5B model with 400 Billion tokens, and other models with 200 Billion tokens to obtain the Sailor models.
           </p>
         </div>
         <br/>
@@ -186,22 +192,11 @@
       <!-- Pretrain. -->
       <div class="column is-full-width">
         
-        <h2 class="title is-3">Continual Pre-training</h2>
-
-        <!-- Datasets. -->
-        <h3 class="title is-4">Datasets</h3>
+        <h2 class="title is-3">Sailor is committed to Open-Source</h2>
         <div class="content has-text-justified">
           <p>
-            [占位句子] We introduce Sailor, pretrained a large-scale multilingual dataset for continual pre-training of language models. Sailor is a collection of text from various sources, including books, websites, and other texts, in 11 South and Southeast Asian languages. Sailor is designed to be a high-quality, diverse, and balanced dataset that can be used to train language models for a wide range of tasks, including translation, summarization, and question answering.
+          The release of Sailor models marks the beginning of our commitment to open-source. Over the coming weeks, we plan to release several training receipes, including the code for pre-training, the pipeline for data cleaning and data deduplication, and our technical report. Additionally, we aim to share our pre-training corpus as soon as possible. We encourage you to stay tuned for updates.
           </p>
-          <ul>
-            <li>
-              mC4: A large-scale multilingual dataset.
-            </li>
-            <li>
-              SlimPajama: 
-            </li>
-          </ul>
         </div>
         <!-- Datasets. -->
         <br/>
@@ -212,43 +207,101 @@
     <div class="columns is-centered">
       <!-- Performance-->
       <div class="column is-full-width">
-        <h2 class="title is-3">Performance</h2>
-
+        <h2 class="title is-3">Benchmarking Performance</h2>
         <!-- Benchmark. -->
-        <h3 class="title is-4">Benchmark</h3>
+        <!-- <h3 class="title is-4">Benchmark</h3> -->
         <div class="content has-text-justified">
           <p>
-            
-            [占位句子] Benchmarks are tests or sets of tests used to compare the performance of different systems or components, often within computers, such as processors, graphics cards, or storage devices. A paragraph that describes a benchmark might look like this:
+            Sailor models are evaluated spanned several high-quality benchmarks, encompassing four kinds of different tasks: question answering, common sense reasoning, reading Comprehension and examination. We gratefully acknowledge the contributions of all dataset authors. As for evaluation, following established evaluation protocols, we employed the awesome evaluation platform <a href="https://github.com/open-compass/opencompass">OpenCompass</a> for comprehensive evaluation. The performance of all models are assessed based on the 3-shot Exact Match performance, with prompt provided in local languages (e.g., Indonesian task description for Indonesian tasks).
+          </p>
+          <p>
+            We acknowledge and respect the release of several SEA language models before, including <a href="https://aisingapore.org/aiproducts/sea-lion/">SEA-LION</a>, <a href="https://arxiv.org/abs/2312.00738">SeaLLMs</a>, <a href="https://arxiv.org/abs/2312.13951">Typhoon</a> and <a href="https://arxiv.org/abs/2312.11011">VinaLLaMA</a>. Here we mainly selected <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v1">SeaLLMs-7B-v1</a>, its base model <a href="https://huggingface.co/meta-llama/Llama-2-7b">Llama-2-7B</a>, and our base model Qwen 1.5 for performance comparsion, and evaluation results of more models will be presented in our paper. Our reporting strictly adheres to the same evaluation methodology to ensure fair comparsion, and we make much efforts to closely match the reported results of the baseline. Any significant difference in our reproducible results are denoted with an asterisk (*) in the table below, with the original model's reported results used for comparison.
           </p>
           <ul>
             <li>
-              FacQA: A large-scale dataset for fact-based question answering in the context of Southeast Asia.
+              <b>Question Answering</b>: <a href="https://arxiv.org/abs/1910.11856">XQuAD</a> (Thai, Vietnamese) and <a href="https://arxiv.org/abs/2003.05002">TydiQA</a> (Indonesian).
             </li>
             <li>
-              TydiQA: A large-scale question answering dataset for 11 South and Southeast Asian languages.
+              <b>Commonsense Reasoning</b>: <a href="https://aclanthology.org/2020.emnlp-main.185/">XCOPA</a> (Indonesian, Thai, Vietnamese).
+            </li>
+            <li>
+              <b>Reading Comprehension</b>: <a href="https://arxiv.org/abs/2308.16884">Belebele</a> (Indonesian, Thai, Vietnamese).
+            </li>
+            <li>
+              <b>Examination</b>: <a href="https://arxiv.org/abs/2306.05179">M3Exam</a> (Indonesian, Thai, Vietnamese).
             </li>
           </ul>
         </div>
         <!-- Benchmark. -->
         <br/>
 
+        <div class="column is-full-width">
+          <h2 class="title is-4">Question Answering</h2>
+
+
+          <table>
+    
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>XQuAD (th)</th>
+              <th>XQuAD (vi)</th>
+              <th>TydiQA (id)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Llama-2-7B</td>
+              <td>28.4</td>
+              <td>16.7</td>
+              <td>56.6</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v1</td>
+              <td>25.9</td>
+              <td>30.7</td>
+              <td>50.4</td>
+            </tr>
+            <tr>
+              <td>Qwen-1.5-7B</td>
+              <td>44.9</td>
+              <td>46.5</td>
+              <td>57.2</td>
+            </tr>
+            <tr>
+              <td>Sailor-7B</td>
+              <td>58.1</td>
+              <td>54.2</td>
+              <td>60.2</td>
+            </tr>
+          </tbody>
+        </table>
+            </div>
       </div>
       <!-- Performance-->
     </div>
 
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Contact Us</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you have any questions, please raise an issue or contact us at <a href="mailto:doulx@sea.com">doulx@sea.com</a> or <a href="mailto:liuqian@sea.com">liuqian@sea.com</a>.
+          </p>
+        </div>
+      </div>
+    </div>
 
 
   </div>
 </section>
 
-
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code></code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
