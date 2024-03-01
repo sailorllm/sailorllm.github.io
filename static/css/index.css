@@ -172,6 +172,16 @@ th {
   background-color: #f2f2f2;
 }
 
-tr:nth-child(even) {
-  background-color: #f4f8ff;
+.baseline {
+  color: green;
+  font-weight: 1000;
 }
+
+.highlight {
+  color: #000084;
+  font-weight: 1000;
+}
+
+/* tr:nth-child(even) {
+  background-color: #f4f8ff;
+} */
