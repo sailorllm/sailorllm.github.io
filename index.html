@@ -49,10 +49,12 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-2 publication-title"><img src="./static/images/sailor_logo.png" width="60px"> Introducing Sailor: <br/>Open Language Models for South-East Asia</h1>
-          <div class="is-size-6 publication-authors" style="margin-bottom: 1rem;">
+          <div class="is-size-5 publication-authors" style="margin-bottom: 1rem;">
             <span class="author-block">
-              By <a href="https://sail.sea.com/">Sea AI Lab</a> and <a href="https://istd.sutd.edu.sg/people/faculty/lu-wei/">Singapore University of Technology and Design</a>
-            </span>
+              <div style="display: flex; align-items: center;">
+                <span style="vertical-align: middle;"><a href="https://sail.sea.com/"><img src="./static/images/sail_logo.png" style="height: 2.5rem; margin-right: 5px; vertical-align: middle;"></a> and <a href="https://istd.sutd.edu.sg/people/faculty/lu-wei/"><img src="./static/images/sutd_logo.png" style="height: 2.5rem; margin-right: 5px; vertical-align: middle;"></a></span>
+            </div>
+          </span>
           </div>
 
           <!-- <div class="is-size-5 publication-authors">
@@ -175,7 +177,7 @@
     <div class="columns is-centered">
       <!-- Description -->
       <div class="column is-full-width">
-        <h2 class="title is-3">Sailor is built from Open-Source Community</h2>
+        <h2 class="title is-3">Sailor is Built from Open-Source Community</h2>
         <div class="content has-text-justified">
           <p>
             Sailor owes its existence to the open-source community. It is crafted by continually pre-training from language models like the remarkable <a href="https://qwenlm.github.io/blog/qwen1.5/">Qwen 1.5</a> models, which already has a great performance on SEA languages. The pre-training corpus heavily leverages the publicly available corpus, including <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B">SlimPajama</a>, <a href="https://huggingface.co/datasets/Skywork/SkyPile-150B">SkyPile</a>, <a href="https://huggingface.co/datasets/cc100">CC100</a> and <a href="https://huggingface.co/datasets/allenai/MADLAD-400">MADLAD-400</a>.
@@ -185,6 +187,7 @@
           </p>
           <p>For most of the models, we use 200 billion tokens, with the effective tokens for each language as shown below. For models utilizing 400 billion tokens, they are doubled accordingly.</p>
           <br/>
+
           <table>
             <tr>
               <th>Language</th>
@@ -230,7 +233,7 @@
       <!-- Pretrain. -->
       <div class="column is-full-width">
         
-        <h2 class="title is-3">Sailor is committed to Open-Source Community</h2>
+        <h2 class="title is-3">Sailor is Committed to Open-Source Community</h2>
         <div class="content has-text-justified">
           <p>
           The release of Sailor models marks the beginning of our commitment to open-source. Over the coming weeks, we plan to release several training receipes, including the code for pre-training, the pipeline for data cleaning and data deduplication, and our technical report. Additionally, we aim to share our pre-training corpus as soon as possible. We encourage you to stay tuned for updates.
