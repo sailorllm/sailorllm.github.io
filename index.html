@@ -183,6 +183,42 @@
           <p>
             By employing aggressive data deduplication and careful data cleaning on the collected corpus, we have attained a high-quality dataset spanning various languages. Through systematic experiments to determine the weights of different languages, Sailor models undergo training from 200B to 400B tokens, tailored to different model sizes. The approach boosts their performance on SEA languages while maintaining proficiency in English and Chinese without significant compromise. Finally, we continually pre-train the Qwen1.5-0.5B model with 400 Billion tokens, and other models with 200 Billion tokens to obtain the Sailor models.
           </p>
+          <p>For most of the models, we use 200 billion tokens, with the effective tokens for each language as shown below. For models utilizing 400 billion tokens, they are doubled accordingly.</p>
+          <br/>
+          <table>
+            <tr>
+              <th>Language</th>
+              <th>Tokens (Billion)</th>
+            </tr>
+            <tr>
+              <td>Indonesian (id)</td>
+              <td>51.56</td>
+            </tr>
+            <tr>
+              <td>Malay (ms)</td>
+              <td>7.91</td>
+            </tr>
+            <tr>
+              <td>Thai (th)</td>
+              <td>38.24</td>
+            </tr>
+            <tr>
+              <td>Vietnamese (vi)</td>
+              <td>41.50</td>
+            </tr>
+            <tr>
+              <td>Lao (lao)</td>
+              <td>0.34</td>
+            </tr>
+            <tr>
+              <td>English (en)</td>
+              <td>37.2</td>
+            </tr>
+            <tr>
+              <td>Chinese (zh)</td>
+              <td>22.64</td>
+            </tr>
+          </table>          
         </div>
         <br/>
 
@@ -537,7 +573,7 @@
               <th>M3Exam (vi)</th>
             </tr>
             <tr style="color: grey">
-              <td>Random guess</td>
+              <td>Random Guess</td>
               <td><span style="color: grey">22.90</span></td>
               <td><span style="color: grey">25.00</span></td>
               <td><span style="color: grey">25.21</span></td>
