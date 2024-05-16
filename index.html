@@ -130,7 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Sailor is a suite of Open Language Models tailored for South-East Asia (SEA), focusing on languages such as 🇮🇩Indonesian, 🇹🇭Thai, 🇻🇳Vietnamese, 🇲🇾Malay, and 🇱🇦Lao. Developed with careful data curation, Sailor models are designed to understand and generate text across diverse linguistic landscapes of SEA region. Built from Qwen 1.5, Sailor encompasses models of varying sizes, spanning from 0.5B to 7B versions for different requirements. Benchmarking results demonstrate Sailor's proficiency in tasks such as question answering, commonsense reasoning, reading comprehension and etc. in SEA languages.
+            Sailor is a suite of Open Language Models tailored for South-East Asia (SEA), focusing on languages such as 🇮🇩Indonesian, 🇹🇭Thai, 🇻🇳Vietnamese, 🇲🇾Malay, and 🇱🇦Lao. Developed with careful data curation, Sailor models are designed to understand and generate text across diverse linguistic landscapes of SEA region. Built from Qwen 1.5, Sailor encompasses models of varying sizes, spanning from 0.5B to 14B versions for different requirements. Benchmarking results demonstrate Sailor's proficiency in tasks such as question answering, commonsense reasoning, reading comprehension and etc. in SEA languages.
             <!-- We further fine-tune the base model with open-source datasets to get instruction-tuned models, namedly Sailor-Chat. -->
           </p>
           <ul>
@@ -138,7 +138,7 @@
               Continually pretrained on <b>200 Billion to 400 Billion</b> tokens over 7 languages, including Indonesian, Thai, Vietnamese, Malay, Lao, English and Chinese.
             </li>
             <li>
-              Various model sizes (<b>0.5B</b>, <b>1.8B</b>, <b>4B</b> and <b>7B</b>) to support different requirements.
+              Various model sizes (<b>0.5B</b>, <b>1.8B</b>, <b>4B</b>, <b>7B</b>, <b>14B</b>) to support different requirements.
             </li>
             <li>
               Strong performance on SEA benchmarks such as XQuAD, TydiQA, XCOPA, Belebele and M3Exam.
@@ -282,8 +282,7 @@
           <h2 class="title is-4">Question Answering</h2>
 
           <p>
-            All models are evaluated on the XQuAD and TydiQA benchmarks, with the 3-shot Exact Match (EM) and F1 score reported. Baselines which have better performance than Sailor models are highlighted in <span class="baseline">green</span>.
-          </p>
+            All models are evaluated on the XQuAD and TydiQA benchmarks, with the 3-shot Exact Match (EM) and F1 score reported. Baselines which have better performance than Sailor models are highlighted in <span class="baseline">green</span>. Sailor-14B's XQuAD (th) result seem abnormal, with its predictions tending to be semantically equivalent but longer than the groundtruth, leading to lower EM and F1 scores compared to Qwen1.5.
           <br/>
           <table>
             <tr>
@@ -364,7 +363,19 @@
               <td>60.53 / 75.42</td>
               <td>53.81 / 74.62</td>
             </tr>
-            </table>
+            <tr>
+              <td>Qwen1.5-14B</td>
+              <td class="baseline">55.53 / 74.36</td>
+              <td class="baseline">60.18 / 81.05</td>
+              <td>57.57 / 77.58</td>
+            </tr>
+            <tr class="highlight">
+              <td>Sailor-14B</td>
+              <td>49.43* / 69.99*</td>
+              <td>58.94 / 77.85</td>
+              <td>57.83 / 77.37</td>
+            </tr>
+          </table>
 
         </div>
 
@@ -460,6 +471,18 @@
               <td>59.00</td>
               <td>72.20</td>
               <td>72.20</td>
+            </tr>
+            <tr>
+              <td>Qwen1.5-14B</td>
+              <td>60.00</td>
+              <td>72.20</td>
+              <td>74.00</td>
+            </tr>
+            <tr class="highlight">
+              <td>Sailor-14B</td>
+              <td>64.40</td>
+              <td>79.60</td>
+              <td>80.40</td>
             </tr>
           </table>
           
@@ -559,6 +582,18 @@
               <td>44.33</td>
               <td>45.33</td>
             </tr>
+            <tr>
+              <td>Qwen1.5-14B</td>
+              <td>41.44</td>
+              <td>46.22</td>
+              <td>40.33</td>
+            </tr>
+            <tr class="highlight">
+              <td>Sailor-14B</td>
+              <td>42.11</td>
+              <td>47.56</td>
+              <td>45.89</td>
+            </tr>
           </table>
 
         </div>
@@ -567,7 +602,7 @@
           <h2 class="title is-4">Examination</h2>
 
           <p>All models are evaluated on the M3Exam benchmark, with the 3-shot Exact Match (EM) reported. 
-            The code jv is short for Javanese, which is a language spoken in Indonesia. Please note that certain results may be different from those reported in SeaLLM-7B-v2's repo due to different evaluation criteria.
+            The code jv is short for Javanese, which is a language spoken in Indonesia.
           </p>
           
           <br/>
@@ -578,83 +613,107 @@
               <th>M3Exam (jv)</th>
               <th>M3Exam (vi)</th>
             </tr>
-            <tr style="color: grey">
-              <td>Random Guess</td>
-              <td><span style="color: grey">22.90</span></td>
-              <td><span style="color: grey">25.00</span></td>
-              <td><span style="color: grey">25.21</span></td>
-            </tr>
             <tr>
               <td>Qwen1.5-0.5B</td>
-              <td>22.93</td>
-              <td>25.07</td>
-              <td>26.66</td>
+              <td class="baseline">22.38</td>
+              <td>22.10</td>
+              <td class="baseline">29.12</td>
             </tr>
             <tr class="highlight">
               <td>Sailor-0.5B</td>
-              <td>24.41</td>
-              <td>26.15</td>
-              <td>30.91</td>
+              <td>21.87</td>
+              <td>28.84</td>
+              <td>23.53</td>
             </tr>
             <tr>
               <td>Qwen1.5-1.8B</td>
-              <td>24.04</td>
-              <td>24.26</td>
-              <td>28.68</td>
+              <td>23.81</td>
+              <td>26.15</td>
+              <td class="baseline">36.39</td>
             </tr>
             <tr class="highlight">
               <td>Sailor-1.8B</td>
-              <td>25.38</td>
-              <td>28.30</td>
-              <td>34.71</td>
+              <td>23.90</td>
+              <td>29.65</td>
+              <td>27.67</td>
             </tr>
             <tr>
               <td>Qwen1.5-4B</td>
-              <td>24.50</td>
-              <td>24.26</td>
-              <td>30.02</td>
+              <td>26.26</td>
+              <td class="baseline">30.19</td>
+              <td class="baseline">40.02</td>
             </tr>
             <tr class="highlight">
               <td>Sailor-4B</td>
-              <td>27.88</td>
-              <td>31.27</td>
-              <td>40.69</td>
+              <td>27.23</td>
+              <td>29.11</td>
+              <td>31.58</td>
             </tr>
             <tr>
               <td>Llama-2-7B</td>
-              <td>23.67</td>
-              <td>25.07</td>
-              <td>33.15</td>
+              <td>21.13</td>
+              <td>23.99</td>
+              <td>34.14</td>
             </tr>
             <tr>
               <td>Mistral-7B-v0.1</td>
-              <td>26.03</td>
-              <td>26.68</td>
-              <td>36.11</td>
+              <td>29.59</td>
+              <td>31.00</td>
+              <td>43.54</td>
+            </tr>
+            <tr>
+              <td>Sea-Lion-7B</td>
+              <td>23.90</td>
+              <td>21.56</td>
+              <td>26.89</td>
             </tr>
             <tr>
               <td>SeaLLM-7B-Hybrid</td>
-              <td>27.18</td>
-              <td>26.95</td>
-              <td>36.50</td>
+              <td>25.98</td>
+              <td>24.53</td>
+              <td>38.79</td>
             </tr>
             <tr>
               <td>SeaLLM-7B-v2</td>
-              <td>28.48</td>
+              <td>35.60</td>
               <td>29.92</td>
-              <td>39.18</td>
+              <td>50.36</td>
             </tr>
             <tr>
               <td>Qwen1.5-7B</td>
-              <td>25.75</td>
-              <td>26.15</td>
-              <td>36.28</td>
+              <td>35.88</td>
+              <td>33.15</td>
+              <td>51.09</td>
             </tr>
             <tr class="highlight">
               <td>Sailor-7B</td>
-              <td>30.00</td>
-              <td>32.88</td>
-              <td>44.10</td>
+              <td>38.33</td>
+              <td>35.85</td>
+              <td>51.98</td>
+            </tr>
+            <tr>
+              <td>Qwen1.5-7B</td>
+              <td>35.88</td>
+              <td>33.15</td>
+              <td>51.09</td>
+            </tr>
+            <tr class="highlight">
+              <td>Sailor-7B</td>
+              <td>38.33</td>
+              <td>35.85</td>
+              <td>51.98</td>
+            </tr>
+            <tr>
+              <td>Qwen1.5-14B</td>
+              <td>43.18</td>
+              <td>35.04</td>
+              <td>58.47</td>
+            </tr>
+            <tr class="highlight">
+              <td>Sailor-14B</td>
+              <td>48.22</td>
+              <td>39.89</td>
+              <td>60.54</td>
             </tr>
           </table>
 
